@@ -1,10 +1,14 @@
 import React from "react";
+
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const LeftNav = () => {
   return (
     <LeftNavContainer>
-      <div className='button-container'>Login</div>
+      <Link to='/login' className='button-container'>
+        Login
+      </Link>
     </LeftNavContainer>
   );
 };
