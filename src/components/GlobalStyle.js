@@ -5,11 +5,15 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Archivo', sans-serif;
+        font-family: 'Inter', sans-serif;
     }
 
     .padding-screen{
         padding: 0px 5rem;
+    }
+
+    a:hover{
+        list-style: none;
     }
 `;
 
