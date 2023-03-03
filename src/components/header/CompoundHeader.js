@@ -7,9 +7,6 @@ import brandImage from "../../images/brand-image.png";
 import LeftNav from "./LeftNav";
 
 const Header = () => {
-  const toggleMenu = () => {
-    document.querySelector(".navigation-container").classList.toggle("show");
-  };
   return (
     <HeaderContainer>
       <div className='container'>
