@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import brandImage from "../../images/brand-image.png";
 
@@ -11,9 +12,9 @@ const Header = () => {
     <HeaderContainer>
       <div className='container'>
         <nav className='navbar navbar-expand-lg'>
-          <a className='navbar-brand' href='#5'>
+          <Link className='navbar-brand' to='/'>
             <img src={brandImage} alt='Brand Preview' />
-          </a>
+          </Link>
           <button
             className='navbar-toggler'
             type='button'
@@ -27,15 +28,15 @@ const Header = () => {
           </button>
           <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
             <div className='navbar-nav ml-auto'>
-              <a className='nav-item nav-link active' href='#1'>
+              <Link className='nav-item nav-link active' to='/'>
                 Home
-              </a>
-              <a className='nav-item nav-link' href='#2'>
+              </Link>
+              <Link className='nav-item nav-link' to='/service'>
                 Service
-              </a>
-              <a className='nav-item nav-link' href='#3'>
+              </Link>
+              <Link className='nav-item nav-link' to='/about'>
                 About
-              </a>
+              </Link>
               <LeftNav />
             </div>
           </div>
