@@ -7,6 +7,10 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Archivo', sans-serif;
     }
+
+    .padding-screen{
+        padding: 0px 5rem;
+    }
 `;
 
 export default GlobalStyle;
