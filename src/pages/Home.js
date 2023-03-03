@@ -70,11 +70,7 @@ const Home = () => {
           <img src={landingImage} alt='Landing Preview' />
         </div>
       </HomeContainer>
-      <InformationContainer
-        className='container'
-        data-aos='flip-down'
-        data-aos-duration='2000'
-      >
+      <InformationContainer className='container'>
         <div className='left'>
           <img src={landingImage2} alt='Landing Preview' />
         </div>
@@ -92,7 +88,7 @@ const Home = () => {
 };
 
 const HomeContainer = styled.div`
-  padding: 120px 0px;
+  padding: 70px 0px;
   display: flex;
   align-items: center;
   .left {
