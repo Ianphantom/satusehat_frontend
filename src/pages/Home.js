@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 // import images
@@ -6,7 +6,14 @@ import landingImage from "../images/landing-image1.png";
 import landingImage2 from "../images/landing-image2.png";
 import landingPerson from "../images/landing-person.png";
 
+// import aos
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Home = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <HomeContainer className='container'>
@@ -16,13 +23,22 @@ const Home = () => {
           Your full service lab for clinical trials. Our mission is to ensure
           the generation of accurate and precise findings
         </h2> */}
-          <div className='button-container'>
+          <div
+            className='button-container'
+            data-aos='fade-right'
+            data-aos-duration='2000'
+          >
             <div className='button'>Login to Your Account</div>
             {/* <div className='button' id='secondary'>
             Create Account
           </div> */}
           </div>
-          <div className='bottom-container'>
+          <div
+            className='bottom-container'
+            data-aos='zoom-in'
+            data-aos-easing='linear'
+            data-aos-delay='300'
+          >
             <div className='user'>
               <img src={landingPerson} alt='' />
             </div>
@@ -50,11 +66,15 @@ const Home = () => {
           </div>
         </div>
 
-        <div className='right'>
+        <div className='right' data-aos='fade-left' data-aos-duration='2000'>
           <img src={landingImage} alt='Landing Preview' />
         </div>
       </HomeContainer>
-      <InformationContainer className='container'>
+      <InformationContainer
+        className='container'
+        data-aos='flip-down'
+        data-aos-duration='2000'
+      >
         <div className='left'>
           <img src={landingImage2} alt='Landing Preview' />
         </div>
