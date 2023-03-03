@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 // import aos
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Login = () => {
+const Register = () => {
   useEffect(() => {
     AOS.init();
   }, []);
   return (
-    <LoginContainer className='container'>
+    <RegisterContainer className='container'>
       <div className='left' data-aos='zoom-in' data-aos-duration='2000'>
         <div className='title'>Welcome to SatuSehat</div>
-        <div className='subtitle'>Sign In With Your Email</div>
+        <div className='subtitle'>Create Your New Account</div>
         <div className='input-container'>
           <input
             type='email'
@@ -33,6 +33,24 @@ const Login = () => {
             placeholder='Enter Your Password'
           />
         </div>
+        <div className='input-container'>
+          <input
+            type='password'
+            name='repassword'
+            id='repassword'
+            className='passwordInput'
+            placeholder='Re-enter Your Password'
+          />
+        </div>
+        <div className='input-container'>
+          <input
+            type='number'
+            name='bpjs'
+            id='bpjs'
+            className='passwordInput'
+            placeholder='Enter Your BPJS Number'
+          />
+        </div>
         <div className='buttonSubmit'>Next</div>
         <div className='term'>
           <div className='checklist'>
@@ -44,9 +62,9 @@ const Login = () => {
           </div>
         </div>
         <div className='register'>
-          No Account Yet?{" "}
+          Already have account?{" "}
           <span>
-            <Link to='/register'>Sign up Now!</Link>
+            <Link to='/login'>Login Now!</Link>
           </span>
         </div>
       </div>
@@ -56,11 +74,11 @@ const Login = () => {
           alt='Login Preview'
         />
       </div>
-    </LoginContainer>
+    </RegisterContainer>
   );
 };
 
-const LoginContainer = styled.div`
+const RegisterContainer = styled.div`
   margin-top: 70px;
   margin-bottom: 70px;
 
@@ -105,9 +123,9 @@ const LoginContainer = styled.div`
       background: #ffffff;
       border: 1px solid #d0d3d6;
       border-radius: 6px;
-      padding: 15px 12px;
+      padding: 12px 12px;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 18px;
       color: #8f959e;
 
@@ -177,4 +195,4 @@ const LoginContainer = styled.div`
   }
 `;
 
-export default Login;
+export default Register;
