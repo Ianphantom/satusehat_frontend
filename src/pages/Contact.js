@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
+// import aos
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Contact = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <ContactContainer className='container'>
       <div className='connect'>
-        <div className='left'>
+        <div className='left' data-aos='zoom-in-right' data-aos-duration='1000'>
           <div className='subtitle'>Let's Connect</div>
           <div className='title'>Contact our team</div>
           <div className='text'>
@@ -13,7 +20,12 @@ const Contact = () => {
             message via our in-app chat support or give us a call.
           </div>
         </div>
-        <div className='right'>
+        <div
+          className='right'
+          data-aos='zoom-in-left'
+          data-aos-duration='1000'
+          data-aos-delay='300'
+        >
           <div className='identityContainer'>
             <div className='inputContainer'>
               <input type='text' name='name' id='name' placeholder='Name' />
@@ -26,7 +38,7 @@ const Contact = () => {
           <div className='button-submit'>Send Message</div>
         </div>
       </div>
-      <div className='account'>
+      <div className='account' data-aos='fade-up' data-aos-delay='500'>
         <div className='title'>Ready to trust Coinvent with your money?</div>
         <div className='button-container'>
           <div className='button-black'>Get All Access</div>
