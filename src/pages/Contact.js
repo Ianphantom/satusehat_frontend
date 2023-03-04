@@ -177,5 +177,24 @@ const ContactContainer = styled.div`
       }
     }
   }
+
+  @media (max-width: 1000px) {
+    .connect {
+      flex-direction: column;
+      .left {
+        text-align: center;
+        width: 100%;
+      }
+      .right {
+        width: 100%;
+      }
+    }
+
+    .account {
+      .title {
+        width: 100%;
+      }
+    }
+  }
 `;
 export default Contact;
