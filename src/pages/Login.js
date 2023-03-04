@@ -103,7 +103,8 @@ const LoginContainer = styled.div`
     input {
       width: 100%;
       background: #ffffff;
-      border: 1px solid #d0d3d6;
+      /* border: 1px solid #d0d3d6; */
+      border: none;
       border-radius: 6px;
       padding: 15px 12px;
       font-weight: 400;
