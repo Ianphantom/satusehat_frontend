@@ -1,15 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const NavBarUser = () => {
   return (
     <NavBarContainer>
       <div className='divider'>
-        <div className='navigation-container'>Dashboard</div>
+        <Link to='dashboard'>
+          <div className='navigation-container'>Dashboard</div>
+        </Link>
         <hr />
-        <div className='navigation-container'>Rekam Medis</div>
+        <Link to='rekam-medis'>
+          <div className='navigation-container'>Rekam Medis</div>
+        </Link>
         <hr />
-        <div className='navigation-container'>Perizinan</div>
+        <Link to='/user/perizinan'>
+          <div className='navigation-container'>Perizinan</div>
+        </Link>
       </div>
     </NavBarContainer>
   );
@@ -31,7 +38,8 @@ const NavBarContainer = styled.div`
       color: black;
       transition: 1s ease all;
       &:hover {
-        font-size: 18px;
+        font-size: 16px;
+        color: #2d67f6;
       }
     }
   }

@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
 
     a:hover{
         list-style: none;
+        text-decoration: none;
     }
 `;
 
