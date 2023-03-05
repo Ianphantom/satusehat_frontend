@@ -35,6 +35,12 @@ const NavBarContainer = styled.div`
       }
     }
   }
+
+  @media (max-width: 1000px) {
+    .divider {
+      margin-right: 0px;
+    }
+  }
 `;
 
 export default NavBarUser;

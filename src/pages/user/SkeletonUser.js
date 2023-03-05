@@ -30,6 +30,20 @@ const SkeletonContainer = styled.div`
       border-left: 1px solid rgba(0, 0, 0, 0.08);
     }
   }
+
+  @media (max-width: 1000px) {
+    .main {
+      flex-direction: column;
+      .left-skeleton {
+        width: 100%;
+      }
+      .right-skeleton {
+        width: 100%;
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
 `;
 
 export default SkeltonUser;

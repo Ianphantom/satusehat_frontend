@@ -33,6 +33,20 @@ const DashboardContainer = styled.div`
       width: 25%;
     }
   }
+
+  @media (max-width: 1000px) {
+    margin-left: 0px;
+    .section-one {
+      flex-direction: column;
+      .left {
+        width: 100%;
+      }
+
+      .right {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 export default Dashboard;
