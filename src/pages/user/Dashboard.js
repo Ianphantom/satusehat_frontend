@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 import ProfileCard from "../../components/user/ProfileCard";
+import LastAppoinment from "../../components/user/LastAppoinment";
 
 const Dashboard = () => {
   return (
@@ -11,7 +12,9 @@ const Dashboard = () => {
         <div className='left'>
           <ProfileCard />
         </div>
-        <div className='right'></div>
+        <div className='right'>
+          <LastAppoinment />
+        </div>
       </div>
     </DashboardContainer>
   );
@@ -23,7 +26,7 @@ const DashboardContainer = styled.div`
   margin-bottom: 40px;
   .section-one {
     display: flex;
-    gap: 20px;
+    gap: 40px;
 
     .left {
       width: 70%;
