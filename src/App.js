@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 
 // import user page
 import SkeletonUser from "./pages/user/SkeletonUser";
+import Dashboard from "./pages/user/Dashboard";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
         <Route path='/service' element={<Service />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/user' element={<SkeletonUser />}>
-          {/* <Route path='home' element={<Contact />} /> */}
+          <Route path='dashboard' element={<Dashboard />} />
         </Route>
       </Routes>
       <Footer />

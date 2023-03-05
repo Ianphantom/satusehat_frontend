@@ -7,10 +7,10 @@ const SkeltonUser = () => {
   return (
     <SkeletonContainer className='container'>
       <div className='main'>
-        <div className='left'>
+        <div className='left-skeleton'>
           <NavBarUser />
         </div>
-        <div className='right'>
+        <div className='right-skeleton'>
           <Outlet />
         </div>
       </div>
@@ -21,11 +21,11 @@ const SkeltonUser = () => {
 const SkeletonContainer = styled.div`
   .main {
     display: flex;
-    .left {
+    .left-skeleton {
       width: 25%;
     }
 
-    .right {
+    .right-skeleton {
       width: 75%;
       border-left: 1px solid rgba(0, 0, 0, 0.08);
     }

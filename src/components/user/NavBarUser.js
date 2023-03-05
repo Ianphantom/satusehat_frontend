@@ -22,9 +22,10 @@ const NavBarContainer = styled.div`
     margin-top: 40px;
     margin-right: 40px;
     margin-bottom: 40px;
-    padding: 20px 20px;
+    padding: 16px 16px;
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 8px;
+    font-size: 14px;
     .navigation-container {
       cursor: pointer;
       color: black;
