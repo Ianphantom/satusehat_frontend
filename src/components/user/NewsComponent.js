@@ -24,7 +24,10 @@ const NewsContainer = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   border-left: none;
   border-right: none;
-
+  &:hover {
+    cursor: pointer;
+    background-color: #f8f9fa;
+  }
   .header-container {
     display: flex;
     gap: 15px;
