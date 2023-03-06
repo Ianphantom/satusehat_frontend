@@ -1,21 +1,47 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+// import aos
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const NavBarUser = () => {
+  const url = useLocation().pathname.split("/");
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <NavBarContainer>
+    <NavBarContainer data-aos='fade-up' data-aos-duration='2000'>
       <div className='divider'>
         <Link to='dashboard'>
-          <div className='navigation-container'>Dashboard</div>
+          <div
+            className={`navigation-container ${
+              url[2] === "dashboard" ? "active" : ""
+            }`}
+          >
+            Dashboard
+          </div>
         </Link>
         <hr />
         <Link to='rekam-medis'>
-          <div className='navigation-container'>Rekam Medis</div>
+          <div
+            className={`navigation-container ${
+              url[2] === "rekam-medis" ? "active" : ""
+            }`}
+          >
+            Rekam Medis
+          </div>
         </Link>
         <hr />
         <Link to='/user/perizinan'>
-          <div className='navigation-container'>Perizinan</div>
+          <div
+            className={`navigation-container ${
+              url[2] === "perizinan" ? "active" : ""
+            }`}
+          >
+            Perizinan
+          </div>
         </Link>
       </div>
     </NavBarContainer>
@@ -34,6 +60,10 @@ const NavBarContainer = styled.div`
     box-shadow: 0px 12px 24px rgba(18, 38, 63, 0.03);
     border-radius: 8px;
     font-size: 14px;
+    .active {
+      font-size: 16px;
+      color: #2d67f6 !important;
+    }
     .navigation-container {
       cursor: pointer;
       color: black;

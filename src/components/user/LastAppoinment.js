@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
+// import aos
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const LastAppoinment = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <LastContainer className='h-100'>
+    <LastContainer
+      className='h-100'
+      data-aos='fade-up'
+      data-aos-duration='2000'
+    >
       <div className='title'>Last Appointment</div>
       <div className='all-container'>
         <div className='section-1'>

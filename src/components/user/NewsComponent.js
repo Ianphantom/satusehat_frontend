@@ -20,8 +20,8 @@ const NewsComponent = ({ image, company, news, text, date }) => {
 };
 
 const NewsContainer = styled.div`
-  padding: 18px 20px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 25px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   border-left: none;
   border-right: none;
 

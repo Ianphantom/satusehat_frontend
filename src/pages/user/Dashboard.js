@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styled from "styled-components";
 
@@ -6,7 +6,14 @@ import ProfileCard from "../../components/user/ProfileCard";
 import LastAppoinment from "../../components/user/LastAppoinment";
 import NewsComponent from "../../components/user/NewsComponent";
 
+// import aos
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Dashboard = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <DashboardContainer>
       <div className='section-one'>
@@ -17,7 +24,12 @@ const Dashboard = () => {
           <LastAppoinment />
         </div>
       </div>
-      <div className='section-two'>
+      <div
+        className='section-two'
+        data-aos='fade-up'
+        data-aos-duration='2000'
+        data-aos-delay='500'
+      >
         <div className='title'>Recent News</div>
         <NewsComponent
           image={

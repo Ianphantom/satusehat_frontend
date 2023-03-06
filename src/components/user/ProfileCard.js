@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import userProfile from "../../images/user-profile.png";
-// import userPicture from "../../images/user-image-example.png";
+
+// import aos
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ProfileCard = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <ProfileCardContainer className='h-100'>
+    <ProfileCardContainer
+      className='h-100'
+      data-aos='fade-up'
+      data-aos-duration='2000'
+    >
       <div className='top'>
         <div>
           <div className='title'>Welcome Back!</div>
