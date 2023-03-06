@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DataTable from "react-data-table-component";
 import styled from "styled-components";
+
+// import aos
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const columns = [
   {
@@ -41,8 +45,15 @@ const generateDummyData = (number) => {
 generateDummyData(20);
 
 const RekamMedisTable = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <TableContainer>
+    <TableContainer
+      data-aos='fade-up'
+      data-aos-duration='2000'
+      data-aos-delay='500'
+    >
       <div className='title'>Your Medical Record</div>
       <DataTable columns={columns} data={data} pagination />
     </TableContainer>
