@@ -5,13 +5,15 @@ import { Outlet } from "react-router-dom";
 
 const SkeltonUser = () => {
   return (
-    <SkeletonContainer className='container'>
-      <div className='main'>
-        <div className='left-skeleton'>
-          <NavBarUser />
-        </div>
-        <div className='right-skeleton'>
-          <Outlet />
+    <SkeletonContainer>
+      <div className='container'>
+        <div className='main'>
+          <div className='left-skeleton'>
+            <NavBarUser />
+          </div>
+          <div className='right-skeleton'>
+            <Outlet />
+          </div>
         </div>
       </div>
     </SkeletonContainer>
@@ -19,6 +21,9 @@ const SkeltonUser = () => {
 };
 
 const SkeletonContainer = styled.div`
+  /* background-color: #f8f8fb; */
+  background: rgba(240, 244, 255, 0.5);
+  /* background: white; */
   .main {
     display: flex;
     .left-skeleton {

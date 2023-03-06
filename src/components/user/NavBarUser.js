@@ -24,13 +24,14 @@ const NavBarUser = () => {
 
 const NavBarContainer = styled.div`
   width: 100%;
-
   .divider {
+    background: white;
     margin-top: 40px;
-    margin-right: 40px;
+    margin-right: 20px;
     margin-bottom: 40px;
     padding: 16px 16px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    /* border: 1px solid rgba(0, 0, 0, 0.08); */
+    box-shadow: 0px 12px 24px rgba(18, 38, 63, 0.03);
     border-radius: 8px;
     font-size: 14px;
     .navigation-container {

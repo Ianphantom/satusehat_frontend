@@ -64,10 +64,12 @@ const LastAppoinment = () => {
 };
 
 const LastContainer = styled.div`
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: white;
+  /* border: 1px solid rgba(0, 0, 0, 0.08); */
   border-radius: 8px;
   text-align: center;
   height: 100%;
+  box-shadow: 0px 12px 24px rgba(18, 38, 63, 0.03);
   .all-container {
     padding: 16px 16px;
     gap: 60px;
@@ -76,13 +78,16 @@ const LastContainer = styled.div`
     align-items: center;
   }
   .title {
-    background: rgba(26, 147, 111, 0.1);
+    /* background: rgba(26, 147, 111, 0.1); */
     text-align: center;
     padding: 10px 0px;
     font-weight: 700;
     font-size: 16px;
     line-height: 150%;
-    background: #e7efff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    /* background: #e7efff; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .section-1 {

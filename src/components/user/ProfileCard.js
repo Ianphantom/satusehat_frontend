@@ -43,10 +43,16 @@ const ProfileCard = () => {
 
 const ProfileCardContainer = styled.div`
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  /* border: 1px solid rgba(0, 0, 0, 0.08); */
   border-radius: 8px;
+  /* box-shadow: 2px 2px 5px rgba(60, 70, 83, 0.04); */
+  box-shadow: 0px 12px 24px rgba(18, 38, 63, 0.03);
   .top {
-    background: #e7efff;
+    /* background: #d6d4f9; */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    /* background-color: #f0f4ff; */
     padding: 16px 16px;
     line-height: 20px;
     color: #2d67f6;
