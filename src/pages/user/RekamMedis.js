@@ -1,8 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 
+// import component
+import RekamMedisTable from "../../components/user/RekamMedisTable";
+
 const RekamMedis = () => {
-  return <RekamMedisContainer></RekamMedisContainer>;
+  return (
+    <RekamMedisContainer>
+      <div
+        className='alert alert-warning alert-dismissible fade show'
+        role='alert'
+      >
+        <strong>Attention!</strong> Never give your private key to anyone
+        <button
+          type='button'
+          className='close'
+          data-dismiss='alert'
+          aria-label='Close'
+        >
+          <span aria-hidden='true'>&times;</span>
+        </button>
+      </div>
+      <RekamMedisTable />
+    </RekamMedisContainer>
+  );
 };
 
 const RekamMedisContainer = styled.div`
