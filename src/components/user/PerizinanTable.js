@@ -10,13 +10,11 @@ const columns = [
   {
     name: "Nama Dokter",
     selector: (row) => row.dokter,
-    sortable: true,
     cell: (row) => <div className='namaKlinik'>{row.dokter}</div>,
   },
   {
     name: "Keterangan ",
     selector: (row) => row.keterangan,
-    sortable: true,
   },
   {
     name: "Status",
