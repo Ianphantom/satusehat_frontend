@@ -4,6 +4,10 @@ import NavBarUser from "../../components/user/NavBarUser";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import backArrow from "../../images/svg-icon/icon-back.svg";
 
+// import aos
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const SkeltonUser = () => {
   const url = useLocation().pathname.split("/");
   const [backComponent, setBackComponent] = useState(false);
@@ -19,12 +23,14 @@ const SkeltonUser = () => {
     } else {
       setBackComponent(false);
     }
+
+    AOS.init();
   }, [url]);
   return (
     <SkeletonContainer>
       <div className='container'>
         {backComponent && (
-          <div className='back'>
+          <div className='back' data-aos='fade-left'>
             <img src={backArrow} alt='icon-back' onClick={goBackButton} />
             <div className='text'>Back To Previous</div>
           </div>
