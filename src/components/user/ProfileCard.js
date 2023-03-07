@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import userProfile from "../../images/user-profile.png";
 
@@ -41,9 +42,11 @@ const ProfileCard = () => {
               <div className='top-title'>1245</div>
               <div className='bottom-subtitle'>Revenue</div>
             </div>
-            <div className='profile-container-bottom'>
-              <div className='button'>View Profile</div>
-            </div>
+            <Link to='/user/profile'>
+              <div className='profile-container-bottom'>
+                <div className='button'>View Profile</div>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
