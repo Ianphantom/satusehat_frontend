@@ -21,16 +21,14 @@ const columns = [
   {
     name: "Status",
     sortable: true,
-
-    selector: (row) => (
+    selector: (row) => row.status,
+    cell: (row) => (
       <StatusContainer className={row.status}>{row.status}</StatusContainer>
     ),
   },
   {
     name: "Detail",
     button: true,
-    sortable: true,
-
     cell: () => <Button>View</Button>,
   },
 ];
@@ -42,7 +40,7 @@ const generateDummyData = (number) => {
   for (let i = 0; i < number; i++) {
     let dataDummy = {
       id: i + 1,
-      dokter: "Dr Sabrina Lydia, S.Kk",
+      dokter: `Dr Sabrina Lydia, S.Kk`,
       keterangan: "Rawat jalan di ITS Medical Center",
       status: listStatus[Math.floor(Math.random() * 3)],
     };
@@ -62,7 +60,7 @@ const PerizinanTable = () => {
       data-aos-duration='2000'
       data-aos-delay='500'
     >
-      <div className='title'>Your Medical Record</div>
+      <div className='title'>Permission List</div>
       <DataTable columns={columns} data={data} pagination />
     </PerizinanContainer>
   );
@@ -124,6 +122,7 @@ const Button = styled.button`
 `;
 
 const StatusContainer = styled.div`
+  text-align: center;
   border-radius: 4px;
   padding: 4px 10px;
   font-weight: 600;
