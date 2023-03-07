@@ -28,12 +28,15 @@ const Profile = () => {
   }, []);
   return (
     <ProfileContainer>
-      <div className='profileTop'>
+      <div
+        className='profileTop card-design'
+        data-aos='fade-up'
+        data-aos-duration='1000'
+      >
         <div className='profileUser'>
           <div className='photo-user'>
             <img src={profileDefault} alt='User-Profile' />
           </div>
-          <div className='user-name'>Ian Felix Jonathan S</div>
         </div>
         <div className='main-information'>
           <div className='main-information-data'>
@@ -44,29 +47,29 @@ const Profile = () => {
               isVerified={false}
             />
             <ProfileMainInformation
-              icon={id}
-              text='BPJS ID'
-              result='05311940000008'
+              icon={email}
+              text='Email Utama'
+              result='ian25yola@gmail.com'
               isVerified={false}
             />
           </div>
           <div className='main-information-data'>
             <ProfileMainInformation
-              icon={id}
-              text='BPJS ID'
-              result='05311940000008'
+              icon={phone}
+              text='Nomor Ponsel'
+              result='081271415169'
               isVerified={false}
             />
             <ProfileMainInformation
-              icon={id}
-              text='BPJS ID'
-              result='05311940000008'
+              icon={email}
+              text='Email Alternatif'
+              result='ian25yola@gmail.com'
               isVerified={false}
             />
           </div>
         </div>
       </div>
-      <div className='card-design' data-aos='fade-up' data-aos-duration='2000'>
+      <div className='card-design' data-aos='fade-up' data-aos-duration='1500'>
         <ProfileCardHeader
           title='Informasi Pribadi'
           desc='Data yang umumnya ditampilkan pada aplikasi satu sehat'
@@ -85,7 +88,7 @@ const Profile = () => {
       <div
         className='card-design'
         data-aos='fade-up'
-        data-aos-duration='2000'
+        data-aos-duration='1500'
         data-aos-delay='300'
       >
         <ProfileCardHeader title='Kontak' desc='Ubah email dan nomor ponsel' />
@@ -103,7 +106,7 @@ const Profile = () => {
       <div
         className='card-design'
         data-aos='fade-up'
-        data-aos-duration='2000'
+        data-aos-duration='1500'
         data-aos-delay='500'
       >
         <ProfileCardHeader
@@ -133,31 +136,23 @@ const ProfileContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   .profileTop {
+    width: 100%;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 25px;
+    padding: 16px 16px;
     .profileUser {
-      width: 50%;
       display: flex;
       align-items: center;
       gap: 25px;
-
-      .user-name {
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 36px;
-        color: #001737;
-      }
     }
 
     .main-information {
       display: flex;
-      flex-direction: column;
-      width: 50%;
       gap: 20px;
       .main-information-data {
         display: flex;
-        align-items: center;
+        flex-direction: column;
         gap: 20px;
       }
     }
