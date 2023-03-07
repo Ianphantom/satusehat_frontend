@@ -30,7 +30,7 @@ const NavBarUser = () => {
               url[2] === "rekam-medis" ? "active" : ""
             }`}
           >
-            Rekam Medis
+            Medical Records
           </div>
         </Link>
         <hr />
@@ -40,7 +40,7 @@ const NavBarUser = () => {
               url[2] === "perizinan" ? "active" : ""
             }`}
           >
-            Perizinan
+            Permissions
           </div>
         </Link>
       </div>
