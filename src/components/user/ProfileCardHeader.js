@@ -26,7 +26,7 @@ const ProfileHeaderContainer = styled.div`
     font-weight: 400;
     font-size: 13px;
     line-height: 20px;
-    color: #8392a5;
+    color: #575d78;
   }
 `;
 
