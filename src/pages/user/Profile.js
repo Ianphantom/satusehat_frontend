@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 // import components
@@ -13,10 +13,17 @@ import phone from "../../images/svg-icon/icon-phone.svg";
 import password from "../../images/svg-icon/icon-password.svg";
 import settings from "../../images/svg-icon/icon-settings.svg";
 
+// import aos
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Profile = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <ProfileContainer>
-      <div className='card-design'>
+      <div className='card-design' data-aos='fade-up' data-aos-duration='2000'>
         <ProfileCardHeader
           title='Informasi Pribadi'
           desc='Data yang umumnya ditampilkan pada aplikasi satu sehat'
@@ -32,7 +39,12 @@ const Profile = () => {
           desc='Melihat tanggal lahir'
         />
       </div>
-      <div className='card-design'>
+      <div
+        className='card-design'
+        data-aos='fade-up'
+        data-aos-duration='2000'
+        data-aos-delay='300'
+      >
         <ProfileCardHeader title='Kontak' desc='Ubah email dan nomor ponsel' />
         <ProfileSectionItem
           icon={email}
@@ -45,7 +57,12 @@ const Profile = () => {
           desc='Perbarui dan verifikasi nomor telepon'
         />
       </div>
-      <div className='card-design'>
+      <div
+        className='card-design'
+        data-aos='fade-up'
+        data-aos-duration='2000'
+        data-aos-delay='500'
+      >
         <ProfileCardHeader
           title='Informasi Pribadi'
           desc='Data yang umumnya ditampilkan pada aplikasi satu sehat'
