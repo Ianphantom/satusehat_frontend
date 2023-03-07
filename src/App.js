@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import SkeletonUser from "./pages/user/SkeletonUser";
 import Dashboard from "./pages/user/Dashboard";
 import RekamMedis from "./pages/user/RekamMedis";
+import Perizinan from "./pages/user/Perizinan";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path='/user' element={<SkeletonUser />}>
           <Route path='dashboard' element={<Dashboard />} />
           <Route path='rekam-medis' element={<RekamMedis />} />
+          <Route path='perizinan' element={<Perizinan />} />
         </Route>
       </Routes>
       <Footer />

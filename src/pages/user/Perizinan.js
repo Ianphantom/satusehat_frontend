@@ -1,26 +1,25 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
-// import component
-import RekamMedisTable from "../../components/user/RekamMedisTable";
-
+// import table
+import PerizinanTable from "../../components/user/PerizinanTable";
 // import aos
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const RekamMedis = () => {
+const Perizinan = () => {
   useEffect(() => {
     AOS.init();
   }, []);
   return (
-    <RekamMedisContainer>
+    <PerizinanContainer>
       <div
         className='alert alert-primary alert-dismissible fade show'
         role='alert'
         data-aos='fade-up'
         data-aos-duration='2000'
       >
-        <strong>Attention!</strong> Never give your private key to anyone
+        <strong>Attention!</strong> Only give permisiion for verified person!
         <button
           type='button'
           className='close'
@@ -30,15 +29,15 @@ const RekamMedis = () => {
           <span aria-hidden='true'>&times;</span>
         </button>
       </div>
-      <RekamMedisTable />
-    </RekamMedisContainer>
+      <PerizinanTable />
+    </PerizinanContainer>
   );
 };
 
-const RekamMedisContainer = styled.div`
+const PerizinanContainer = styled.div`
   margin-top: 40px;
   margin-left: 20px;
   margin-bottom: 40px;
 `;
 
-export default RekamMedis;
+export default Perizinan;
