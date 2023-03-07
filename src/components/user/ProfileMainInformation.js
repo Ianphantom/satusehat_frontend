@@ -1,11 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
+// import Verified Email
+import thick from "../../images/svg-icon/icon-thick.svg";
+
 const ProfileMainInformation = ({ icon, isVerified, text, result }) => {
   return (
     <MainInformationContainer>
       <div className='left'>
-        <img src={icon} alt='icon-user' />
+        <div className='icon-container'>
+          <img src={icon} alt='icon-user' />
+          {isVerified && (
+            <img className='verified' src={thick} alt='verified' />
+          )}
+        </div>
       </div>
       <div className='right'>
         <div className='result'>{result}</div>
@@ -24,6 +32,14 @@ const MainInformationContainer = styled.div`
     padding: 13px 13px;
     background: rgba(0, 0, 0, 0.1);
     border-radius: 24px;
+    .icon-container {
+      position: relative;
+      .verified {
+        position: absolute;
+        bottom: -10px;
+        right: -15px;
+      }
+    }
   }
 
   .right {

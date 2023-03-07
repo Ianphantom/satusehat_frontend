@@ -50,7 +50,7 @@ const Profile = () => {
               icon={email}
               text='Email Utama'
               result='ian25yola@gmail.com'
-              isVerified={false}
+              isVerified={true}
             />
           </div>
           <div className='main-information-data'>
@@ -64,7 +64,7 @@ const Profile = () => {
               icon={email}
               text='Email Alternatif'
               result='ian25yola@gmail.com'
-              isVerified={false}
+              isVerified={true}
             />
           </div>
         </div>
