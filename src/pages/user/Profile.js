@@ -143,7 +143,6 @@ const ProfileContainer = styled.div`
     padding: 16px 16px;
     .profileUser {
       display: flex;
-      align-items: center;
       gap: 25px;
     }
 
@@ -161,6 +160,22 @@ const ProfileContainer = styled.div`
     border-radius: 8px;
     background: white;
     box-shadow: 0px 12px 24px rgba(18, 38, 63, 0.03);
+  }
+
+  @media (max-width: 1000px) {
+    margin-left: 0px;
+    .profileTop {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .profileUser {
+        justify-content: flex-start;
+      }
+      .main-information {
+        flex-direction: column;
+        width: 100%;
+      }
+    }
   }
 `;
 
