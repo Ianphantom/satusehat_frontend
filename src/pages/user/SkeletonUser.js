@@ -11,8 +11,6 @@ import "aos/dist/aos.css";
 const SkeltonUser = () => {
   const url = useLocation().pathname.split("/");
   const [backComponent, setBackComponent] = useState(false);
-
-  console.log(url[2]);
   const navigate = useNavigate();
   const goBackButton = () => {
     navigate(-1);

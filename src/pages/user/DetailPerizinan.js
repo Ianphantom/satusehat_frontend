@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import ProfileSectionItem from "../../components/user/ProfileSectionItem";
@@ -10,10 +10,16 @@ import time from "../../images/svg-icon/icon-calender.svg";
 import password from "../../images/svg-icon/icon-password.svg";
 
 const DetailPerizinan = () => {
+  // make dummy status
+  const getRandomStatus = () => {
+    const listStatus = ["allowed", "blocked", "waiting"];
+    return listStatus[Math.floor(Math.random() * 3)];
+  };
+  const status = getRandomStatus();
   return (
     <DetailContainer>
       <div className='card-design'>
-        <div className='status allowed'>
+        <div className={`status ${status}`}>
           <div className='waktuAkses'>ITS Medical Center</div>
           <div className='namaDokter'>Dr Sabrina Lydia Simanjuntak, Sp.KK</div>
         </div>
@@ -39,6 +45,14 @@ const DetailPerizinan = () => {
           title='Reason'
           desc='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit volutpat mauris. Integer quis neque tincidunt, consequat ligula vel, condimentum erat. Nunc odio nisi, tempor in augue a, maximus molestie erat. Duis non sem vel ante condimentum mollis. Phasellus augue purus, accumsan sit amet tellus eu, scelerisque venenatis dolor. Nunc elementum fringilla felis id placerat. Phasellus tincidunt felis vitae malesuada tempus'
         />
+        {/* button for granting access */}
+        {status === "waiting" ? (
+          <div className='button-container'>
+            <div className='button'>Grant Access</div>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </DetailContainer>
   );
@@ -99,6 +113,22 @@ const DetailContainer = styled.div`
       .namaDokter {
         color: #ff6b00;
       }
+    }
+  }
+
+  .button-container {
+    cursor: pointer;
+    width: fit-content;
+    padding: 16px 16px;
+    margin-left: auto;
+    .button {
+      padding: 12px 24px;
+      background-color: #2d67f6;
+      border-radius: 5px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
     }
   }
 `;
