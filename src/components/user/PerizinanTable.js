@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import DataTable from "react-data-table-component";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 // import aos
 import AOS from "aos";
@@ -27,7 +28,11 @@ const columns = [
   {
     name: "Detail",
     button: true,
-    cell: () => <Button>View</Button>,
+    cell: () => (
+      <Link to='12343234'>
+        <Button>View</Button>
+      </Link>
+    ),
   },
 ];
 

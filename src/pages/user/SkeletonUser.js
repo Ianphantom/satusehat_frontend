@@ -30,7 +30,7 @@ const SkeltonUser = () => {
     <SkeletonContainer>
       <div className='container'>
         {backComponent && (
-          <div className='back' data-aos='fade-left'>
+          <div className='back' data-aos='fade-left' data-aos-duration='1500'>
             <img src={backArrow} alt='icon-back' onClick={goBackButton} />
             <div className='text'>Back To Previous</div>
           </div>
