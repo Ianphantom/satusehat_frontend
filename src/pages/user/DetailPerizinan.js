@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import ProfileSectionItem from "../../components/user/ProfileSectionItem";
@@ -9,6 +9,10 @@ import email from "../../images/svg-icon/icon-mail.svg";
 import time from "../../images/svg-icon/icon-calender.svg";
 import password from "../../images/svg-icon/icon-password.svg";
 
+// import aos
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const DetailPerizinan = () => {
   // make dummy status
   const getRandomStatus = () => {
@@ -16,15 +20,24 @@ const DetailPerizinan = () => {
     return listStatus[Math.floor(Math.random() * 3)];
   };
   const status = getRandomStatus();
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <DetailContainer>
-      <div className='card-design'>
+      <div className='card-design' data-aos='fade-up' data-aos-duration='1500'>
         <div className={`status ${status}`}>
           <div className='waktuAkses'>ITS Medical Center</div>
           <div className='namaDokter'>Dr Sabrina Lydia Simanjuntak, Sp.KK</div>
         </div>
       </div>
-      <div className='card-design'>
+      <div
+        className='card-design'
+        data-aos='fade-up'
+        data-aos-duration='1500'
+        data-aos-delay='300'
+      >
         <ProfileSectionItem
           icon={iconNama}
           title='Physican Name'
