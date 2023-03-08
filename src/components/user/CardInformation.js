@@ -39,6 +39,7 @@ const SectionContainer = styled.div`
         font-size: 14px;
         line-height: 21px;
         color: #001737;
+        margin-bottom: 3px;
       }
       .desc {
         font-weight: 400;
