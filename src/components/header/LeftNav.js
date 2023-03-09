@@ -4,11 +4,23 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const LeftNav = () => {
+  const isLogged = true;
   return (
     <LeftNavContainer>
-      <Link to='/login' className='button-container'>
-        Login
-      </Link>
+      {isLogged ? (
+        <>
+          <Link className='nav-item nav-link' to='/user/dashboard'>
+            Dashboard
+          </Link>
+          <Link to='/logout' className='button-container'>
+            Logout
+          </Link>
+        </>
+      ) : (
+        <Link to='/login' className='button-container'>
+          Login
+        </Link>
+      )}
     </LeftNavContainer>
   );
 };

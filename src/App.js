@@ -19,6 +19,7 @@ import RekamMedis from "./pages/user/RekamMedis";
 import Perizinan from "./pages/user/Perizinan";
 import Profile from "./pages/user/Profile";
 import DetailPerizinan from "./pages/user/DetailPerizinan";
+import DetailRekamMedis from "./pages/user/DetailRekamMedis";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path='/user' element={<SkeletonUser />}>
           <Route path='dashboard' element={<Dashboard />} />
           <Route path='rekam-medis' element={<RekamMedis />} />
+          <Route path='rekam-medis/:id' element={<DetailRekamMedis />} />
           <Route path='perizinan' element={<Perizinan />} />
           <Route path='perizinan/:id' element={<DetailPerizinan />} />
           <Route path='profile' element={<Profile />} />
