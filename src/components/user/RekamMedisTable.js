@@ -5,6 +5,7 @@ import styled from "styled-components";
 // import aos
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 const columns = [
   {
@@ -24,7 +25,11 @@ const columns = [
   {
     name: "Detail",
     button: true,
-    cell: () => <Button>View</Button>,
+    cell: () => (
+      <Link to='1412341234'>
+        <Button>View</Button>
+      </Link>
+    ),
   },
 ];
 
