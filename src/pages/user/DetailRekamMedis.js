@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import MedicInformation from "../../components/user/MedicInformation";
@@ -15,13 +15,20 @@ import check from "../../images/svg-icon/icon-check.svg";
 import follow from "../../images/svg-icon/icon-follow.svg";
 import list from "../../images/svg-icon/icon-list.svg";
 
+// import aos
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const DetailRekamMedis = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <DetailRekamMedisContainer>
       <div className='alert alert-primary  fade show' role='alert'>
         <strong>ITS Medical Center!</strong> 19 January 2023, 15:00 WIB
       </div>
-      <div className='card-design'>
+      <div className='card-design' data-aos='fade-left' data-aos-duration='800'>
         <ProfileCardHeader
           title='Patient Information'
           desc='Information about patient'
@@ -42,7 +49,7 @@ const DetailRekamMedis = () => {
           desc='Pasien pernah menderita hipertensi selama 5 tahun terakhir, kontrol terakhir 3 bulan yang lalu, dan menggunakan  obat hipertensi secara teratur'
         />
       </div>
-      <div className='card-design'>
+      <div className='card-design' data-aos='fade-left' data-aos-duration='800'>
         <ProfileCardHeader
           title='Physical Examination'
           desc='The results of a physical examination performed by a doctor'
@@ -57,7 +64,7 @@ const DetailRekamMedis = () => {
           ]}
         />
       </div>
-      <div className='card-design'>
+      <div className='card-design' data-aos='fade-left' data-aos-duration='800'>
         <ProfileCardHeader
           title='Medical treatment'
           desc='Diagnostic information and medical procedures provided by the doctor'
@@ -76,7 +83,7 @@ const DetailRekamMedis = () => {
           ]}
         />
       </div>
-      <div className='card-design'>
+      <div className='card-design' data-aos='fade-left' data-aos-duration='800'>
         <ProfileCardHeader
           title='Medication'
           desc='Medication given by a doctor'
@@ -95,7 +102,7 @@ const DetailRekamMedis = () => {
           ]}
         />
       </div>
-      <div className='card-design'>
+      <div className='card-design' data-aos='fade-left' data-aos-duration='800'>
         <ProfileCardHeader title='Notes' desc='Some notes given by a doctor' />
         <MedicInformation
           icon={follow}
