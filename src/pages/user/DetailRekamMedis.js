@@ -1,25 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import CryptoJS from "crypto-js";
 
-import MedicInformation from "../../components/user/MedicInformation";
+// import dummystate
+import dummyData from "../../dummy";
+
+// import component
+import DeskripsiRekamMedis from "../../components/user/DeskripsiRekamMedisComponent";
+import CardInformation from "../../components/user/CardInformation";
 import ProfileCardHeader from "../../components/user/ProfileCardHeader";
 
 // import icon
-import iconNama from "../../images/svg-icon/icon-nama.svg";
-import notes from "../../images/svg-icon/icon-notes.svg";
 import healthHistory from "../../images/svg-icon/icon-healthHistory.svg";
-import diagnose from "../../images/svg-icon/icon-diagnose.svg";
-import treatment from "../../images/svg-icon/icon-treatment.svg";
-import drug from "../../images/svg-icon/icon-drug.svg";
-import check from "../../images/svg-icon/icon-check.svg";
-import follow from "../../images/svg-icon/icon-follow.svg";
-import list from "../../images/svg-icon/icon-list.svg";
 
 // import aos
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const DetailRekamMedis = () => {
+  const [encrypted, setEncrypted] = useState(true);
+  const [key, setKey] = useState("");
+
+  //dummy data encryption
+  const plainText = JSON.stringify(dummyData());
+  const encryptedText = CryptoJS.AES.encrypt(
+    plainText,
+    "SecretKey123"
+  ).toString();
+
+  const inputHandler = (e) => {
+    setKey(e.target.value);
+  };
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -28,100 +40,38 @@ const DetailRekamMedis = () => {
       <div className='alert alert-primary  fade show' role='alert'>
         <strong>ITS Medical Center!</strong> 19 January 2023, 15:00 WIB
       </div>
-      <div className='card-design' data-aos='fade-left' data-aos-duration='800'>
-        <ProfileCardHeader
-          title='Patient Information'
-          desc='Information about patient'
-        />
-        <MedicInformation
-          icon={iconNama}
-          title='Patient Name'
-          desc='Ian Felix Jonathan Simanjuntak'
-        />
-        <MedicInformation
-          icon={notes}
-          title='Patient Problem'
-          desc='Panas tinggi, pegel linu, sedikit sesak banyak batuknya'
-        />
-        <MedicInformation
-          icon={healthHistory}
-          title='Health History'
-          desc='Pasien pernah menderita hipertensi selama 5 tahun terakhir, kontrol terakhir 3 bulan yang lalu, dan menggunakan  obat hipertensi secara teratur'
-        />
+      <div className='data-sementara'>
+        <div>
+          <div
+            className='card-design'
+            data-aos='fade-left'
+            data-aos-duration='800'
+          >
+            <ProfileCardHeader
+              title='Medical Record'
+              desc='This is your encrypted medical record. Enter your signature key to decrypt'
+            />
+            <CardInformation
+              icon={healthHistory}
+              title='Health History'
+              desc={`Your data is still encrypted. Please provide signature key to decrypt your data`}
+            />
+          </div>
+        </div>
+        <div className='key-container'>
+          <input
+            value={key}
+            onChange={inputHandler}
+            type='text'
+            className='keyInput'
+            placeholder='Enter your signature key'
+          />
+        </div>
+        <div className='button'>
+          <div className='text'>Enter Key</div>
+        </div>
       </div>
-      <div className='card-design' data-aos='fade-left' data-aos-duration='800'>
-        <ProfileCardHeader
-          title='Physical Examination'
-          desc='The results of a physical examination performed by a doctor'
-        />
-        <MedicInformation
-          icon={check}
-          title='Result'
-          desc={[
-            "Tekanan Darah : 150/90 mmHg",
-            "Kepala : Benjolan pada kepala pasien memerlukan penilaian lebih lanjut untuk menentukan jenis kelainan.",
-            "Leher : Pembesaran kelenjar getah bening pada leher pasien bisa menjadi tanda adanya infeksi atau gangguan sistem kekebalan tubuh.",
-          ]}
-        />
-      </div>
-      <div className='card-design' data-aos='fade-left' data-aos-duration='800'>
-        <ProfileCardHeader
-          title='Medical treatment'
-          desc='Diagnostic information and medical procedures provided by the doctor'
-        />
-        <MedicInformation
-          icon={diagnose}
-          title='Diagnosis'
-          desc={["Hipertensi Grade 2", "Sakit kepala tension type"]}
-        />
-        <MedicInformation
-          icon={treatment}
-          title='Action Given'
-          desc={[
-            "Terapi obat hipertensi dengan amlodipin 5mg sehari",
-            "Terapi analgesik dengan paracetamol 500mg 3x sehari selama 14 hari",
-          ]}
-        />
-      </div>
-      <div className='card-design' data-aos='fade-left' data-aos-duration='800'>
-        <ProfileCardHeader
-          title='Medication'
-          desc='Medication given by a doctor'
-        />
-        <MedicInformation
-          icon={drug}
-          title='Amlodipin 5mg'
-          desc={["Catatan : 3 x 1 Sesudah makan", "selama 14 hari"]}
-        />
-        <MedicInformation
-          icon={drug}
-          title='Paracetamol'
-          desc={[
-            "catatan : 3 x 1 sesudah makan",
-            "Jika sudah sembuh, boleh diberhentikan",
-          ]}
-        />
-      </div>
-      <div className='card-design' data-aos='fade-left' data-aos-duration='800'>
-        <ProfileCardHeader title='Notes' desc='Some notes given by a doctor' />
-        <MedicInformation
-          icon={follow}
-          title='Follow Up plan'
-          desc={[
-            "kontrol tekanan darah dalam 1 minggu ke depan",
-            "jika keluhan sakit kepala masih berlanjut, diharapkan kembali berkonsultasi dengan dokter",
-          ]}
-        />
-        <MedicInformation
-          icon={list}
-          title='Notes'
-          desc={[
-            "Pasien diminta untuk menjaga pola makan dan olahraga teratur",
-            "pasien diminta untuk mengurangi komsumsi garam dan minuman beralkohol",
-            "Pasien diminta untuk memeriksa tekanan darah secara berkala",
-          ]}
-        />
-      </div>
+      {/* <DeskripsiRekamMedis /> */}
     </DetailRekamMedisContainer>
   );
 };
@@ -130,12 +80,44 @@ const DetailRekamMedisContainer = styled.div`
   margin-top: 40px;
   margin-left: 20px;
   margin-bottom: 40px;
-
   .card-design {
     border-radius: 8px;
     background: white;
     box-shadow: 0px 12px 24px rgba(18, 38, 63, 0.03);
     margin-bottom: 20px;
+  }
+
+  .key-container {
+    width: 100%;
+    input {
+      border-radius: 8px;
+      border: none;
+      width: 100%;
+      padding: 15px 15px;
+      background: white;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 19px;
+      color: #000000;
+    }
+  }
+
+  .button {
+    margin-top: 10px;
+    cursor: pointer;
+    /* background-color: #407eb4; */
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 19px;
+    .text {
+      padding: 15px 15px;
+      border-radius: 8px;
+      color: white;
+      width: fit-content;
+      background: #2d67f6;
+    }
   }
 `;
 
